@@ -1,0 +1,19 @@
+<div class="container">
+<div class="serinp">
+<input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+</div>
+<div >
+ <button class="search">Search</button> 
+</div>
+</div>
+<table >
+  <tr><th><p>GroupId</p></th><th><p>Group Name</p></th><th><p>Parent Group</p></th><th><p>Group Level</p></th></tr>
+  <ng-container *ngFor="let ug of usergroup">
+    <tr><td><p>{{ug.GROUP_ID}}</p></td><td><P>{{ug.GROUP_NAME}}</P></td><td><p>{{ug.PARENT_GROUP}}</p></td><td><p>{{ug.GROUP_LEVEL}}</p></td></tr>
+  </ng-container>
+  <ul>
+    <li ng-repeat="ug in usergroup ">
+
+    </li>
+  </ul>
+</table>

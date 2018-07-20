@@ -1,0 +1,58 @@
+<div class="container1"><div class="pgroup">Parent Group</div><div class="pname">
+    <select name="fkGroupId" [(ngModel)]="group.fkGroupId" id="fkGroupId" (change)="onShowdata(group.fkGroupId)" >    
+        <option *ngFor="let sub of subgroup"  value="{{sub.GROUP_ID}}">{{sub.GROUP_NAME}}</option>
+      </select>
+  </div></div>
+
+<form name="form" (ngSubmit)="onSubmit()">
+<table >
+    <div class="container2">
+    <input type="hidden" name="userid" [(ngModel)]="group.userid" value="{{id}}" >       
+  <tr>
+    <ng-container *ngFor="let group of subgroupdata;">
+    <input type="hidden" name="FQN_NAME" [(ngModel)]="group.FQN_NAME" id="FQN_NAME" value="{{group.FQN_NAME}}" >
+    <input type="hidden" name="GROUP_LEVEL" [(ngModel)]="group.GROUP_LEVEL" id="GROUP_LEVEL" value="{{group.GROUP_LEVEL}}">
+  </ng-container>
+  </tr>
+  
+  <tr><td><div class="ifields">GROUP NAME</div></td><td><input type="text" id="GROUP_NAME" name="GROUP_NAME" [(ngModel)]="group.GROUP_NAME"  class="form-control" placeholder="Group Name" ></td>
+  <td><div class="ifields">DESCRIPTION</div></td><td><input type="text" id="DESCRIPTION" name="DESCRIPTION" [(ngModel)]="group.DESCRIPTION"  class="form-control" placeholder="Description"></td>
+  <td><div class="ifields">WEB</div></td><td><input type="text" id="WEB" name="WEB" [(ngModel)]="group.WEB"  class="form-control" placeholder="WEB" ></td>  
+</tr> 
+<tr><td><div class="ifields">COUNTRY_ID</div></td><td><input type="text" id="COUNTRY_ID" name="COUNTRY_ID" [(ngModel)]="group.COUNTRY_ID"  class="form-control" placeholder="COUNTRY_ID" ></td>
+  <td><div class="ifields">STATE_ID</div></td><td><input type="text" id="STATE_ID" name="STATE_ID" [(ngModel)]="group.STATE_ID"  class="form-control" placeholder="STATE_ID" ></td>
+  <td><div class="ifields">CITY_ID</div></td><td><input type="text" id="CITY_ID" name="CITY_ID" [(ngModel)]="group.CITY_ID"  class="form-control" placeholder="CITY_ID"></td></tr>
+<tr><td><div class="ifields">ADDRESS1</div></td><td><input type="text" id="ADDRESS1" name="ADDRESS1" [(ngModel)]="group.ADDRESS1"  class="form-control" placeholder="ADDRESS1" ></td>
+<td><div class="ifields">ADDRESS2</div></td><td><input type="text" id="ADDRESS2" name="ADDRESS2" [(ngModel)]="group.ADDRESS2"  class="form-control" placeholder="ADDRESS2"></td>
+<td><div class="ifields">ZIP</div></td><td><input type="text" id="ZIP" name="ZIP" [(ngModel)]="group.ZIP"  class="form-control" placeholder="ZIP" ></td></tr>
+<tr> <td><div class="ifields">PHONE</div></td><td><input type="text" id="PHONE" name="PHONE" [(ngModel)]="group.PHONE"  class="form-control" placeholder="PHONE"></td>
+  <td><div class="ifields">FAX</div></td><td><input type="text" id="FAX" name="FAX" [(ngModel)]="group.FAX"  class="form-control" placeholder="FAX" ></td>
+    <td><div class="ifields">EMAIL</div></td><td><input type="text" id="EMAIL" name="EMAIL" [(ngModel)]="group.EMAIL"  class="form-control" placeholder="EMAIL"></td></tr>
+    <tr>
+      <td><div class="ifields">LANGUAGE_ID</div></td><td><input type="text" id="LANGUAGE_ID" name="LANGUAGE_ID" [(ngModel)]="group.LANGUAGE_ID"  class="form-control" placeholder="LANGUAGE_ID"></td>
+      <td><div class="ifields">CURRENCY_ID</div></td><td><input type="text" id="CURRENCY_ID" name="CURRENCY_ID" [(ngModel)]="group.CURRENCY_ID"  class="form-control" placeholder="CURRENCY_ID" ></td>
+      <td><div class="ifields">ORGANIZATION_TYPE</div></td><td><input type="text" id="ORGANIZATION_TYPE" name="ORGANIZATION_TYPE" [(ngModel)]="group.ORGANIZATION_TYPE"  class="form-control" placeholder="ORGANIZATION_TYPE"></td>
+    </tr>
+</div>
+</table>
+<div class="ugkeycont">
+    <h2 style="font-weight: bold;text-align: center">User Group Key Contacts</h2>
+  <div id="keyform" *ngFor="let q of keyList;let i=index;">
+  <div class="ugkey" id="ugkey">
+<table>
+    {{i}}
+    <tr><td><div class="ifields">CONTACT_NAME</div></td><td><input type="text" value={{q.CONTACT_NAME}} id="CONTACT_NAME{{i}}" name="CONTACT_NAME"  class="form-control" placeholder="CONTACT_NAME"></td>
+    <td><div class="ifields">CONTACT_PHONE</div></td><td><input type="text" value={{q.CONTACT_PHONE}} id="CONTACT_PHONE{{i}}" name="CONTACT_PHONE"   class="form-control" placeholder="CONTACT_PHONE"></td></tr>
+    <tr><td><div class="ifields">CONTACT_EMAIL</div></td><td><input type="text" value={{q.CONTACT_EMAIL}} id="CONTACT_EMAIL{{i}}" name="CONTACT_EMAIL"  class="form-control" placeholder="CONTACT_EMAIL" ></td>
+    <td><div class="ifields">CONTACT_FAX</div></td><td><input type="text" value={{q.CONTACT_FAX}} id="CONTACT_FAX{{i}}" name="CONTACT_FAX"   class="form-control" placeholder="CONTACT_FAX"></td></tr>
+    <tr><td><div class="ifields">CONTACT_MOBILE</div></td><td><input type="text" value={{q.CONTACT_MOBILE}} id="CONTACT_MOBILE{{i}}" name="CONTACT_MOBILE"   class="form-control" placeholder="CONTACT_MOBILE" ></td>
+    <td><div class="ifields">CONTACT_DESIGNATION</div></td><td><input type="text" value={{q.CONTACT_DESIGNATION}} id="CONTACT_DESIGNATION{{i}}" name="CONTACT_DESIGNATION"   class="form-control" placeholder="CONTACT_DESIGNATION"></td></tr>
+</table>
+</div>
+</div>
+  <button type="button" class="deletebtn" (click)="removeElement()">delete</button>
+  <button type="button" class="addbtn" (click)="addFormfield()">Add</button>
+</div>
+  <button type="submit" class="savebtn">Add Sub Group</button>
+</form>
+

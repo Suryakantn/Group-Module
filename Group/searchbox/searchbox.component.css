@@ -1,0 +1,6 @@
+.container{float: left;display: inline-flex}
+.search{font-size: 23px;background: #110761;
+    color: white;
+    text-align: center;
+    width: 79px;border: 0px solid;}
+.serinp{border: 1px solid;width: 300px;}

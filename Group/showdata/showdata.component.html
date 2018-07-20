@@ -1,0 +1,13 @@
+<div class="container">
+<table >
+  <tr><th><p>GroupId</p></th><th><p>Group Name</p></th><th><p>Parent Group</p></th><th><p>Group Level</p></th><th><p>Fqn Name</p></th></tr>
+  <ng-container *ngFor="let ug of usergroup">
+    <tr><td><p>{{ug.GROUP_ID}}</p></td><td><p>{{ug.GROUP_NAME}}</p></td>
+    <td><p>{{ug.PARENT_GROUP}}</p></td><td><p>{{ug.GROUP_LEVEL}}</p></td>
+    <td><p>{{ug.FQN_NAME}}</p></td>
+    <td><a routerLink="/profiletabs/viewgroupdetails/{{ug.GROUP_ID}}" routerLinkActive="active-link" >
+    <button>view</button>
+    </a></td></tr>
+  </ng-container>
+</table>
+</div>

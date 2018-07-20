@@ -1,0 +1,11 @@
+.container{border: 1px solid}
+td P{
+    font-size: 15px; margin-right: 10px;border: 1px solid;text-align: center ;font-weight:bold 
+}
+th P{
+    font-size: 20px ;margin-right: 20px;background: #ecc0c0;
+    color: #151313;padding: 10px;
+}
+td a{
+    font-size: 15px; margin-right: 10px;border: 1px solid;text-align: center ;font-weight:bold 
+}

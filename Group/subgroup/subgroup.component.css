@@ -1,0 +1,27 @@
+.container1{width: 328px;
+    border: 1px solid;
+    font-size: 20px;
+    display: inline-flex;
+    background: #c4bccc;
+}
+.pgroup{font-weight: bold;color: blue;margin-left: 20px;
+    margin-right: 20px;}
+.container2{
+    width: 1052px;border: 1px solid;margin-top: 10px;margin-bottom: 10px;padding: 10px
+}
+.ifields{font-size: 20px;font-weight: bold;margin-right: 14px;margin-left: 14px;}
+input{border: 1px solid}
+.savebtn{background: red;color: white;font-size: 19px;float: right;}
+.addbtn{font-size: 10px;background: orange;color: black;margin-right: 10px;margin-left: 10px;font-weight: bold;float: right;}
+.deletebtn{font-size: 10px;background: orange;color: black;font-weight: bold;}
+.ugkeycont{border: 1px solid;width: 900px;}
+.ugkey{border: 1px solid}
+.ugroupdetails{border: 1px solid}
+.ugdetails{border: 1px solid}
+input[type = submit]{
+    width:100px;
+background-color:#35c8ef;
+border-radius:5px;
+border:2px solid blue;
+color:#fff
+    }
