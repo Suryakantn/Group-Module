@@ -1,14 +1,18 @@
 <div class="container">
-<table>
-  <tr><td>Group Name </td><td></td> <td>Parent Group</td><td></td><td>Organization Type</td><td></td></tr>
-  <tr><td>Group Description</td><td></td></tr>
-  <tr><td>Address1</td><td></td><td>Address2</td><td></td><td>Zip</td><td></td></tr>
-  <tr><td>Country</td><td></td><td>State</td><td></td><td>City</td><td></td></tr>
-  <tr><td>Phone</td><td></td><td>Email</td><td></td><td>Fax</td><td></td></tr>
-  <tr><td>Language</td><td></td><td>Currency</td><td></td><td>Web</td><td></td></tr>
+  <ng-container *ngFor="let ug of usergroup">
+<table border="1">
+  <tr><th>Group Name </th><td>{{ug.GROUP_NAME}}</td> <td>Parent Group</td><td>{{ug.PARENT_GROUP}}</td><td>Organization Type</td><td>{{ug.ORGANIZATION_TYPE}}</td></tr>
+  <tr><td>Group Description</td><td>{{ug.DESCRIPTION}}</td></tr>
+  <tr><td>Address1</td><td>{{ug.ADDRESS1}}</td><td>Address2</td><td>{{ug.ADDRESS2}}</td><td>Zip</td><td>{{ug.ZIP}}</td></tr>
+  <tr><td>Country</td><td>{{ug.COUNTRY_ID}}</td><td>State</td><td>{{ug.STATE_ID}}</td><td>City</td><td>{{ug.CITY_ID}}</td></tr>
+  <tr><td>Phone</td><td>{{ug.PHONE}}</td><td>Email</td><td>{{ug.EMAIL}}</td><td>Fax</td><td>{{ug.FAX}}</td></tr>
+  <tr><td>Language</td><td>{{ug.LANGUAGE_ID}}</td><td>Currency</td><td>{{ug.CURRENCY_ID}}</td><td>Web</td><td>{{ug.WEB}}</td></tr>
 </table>
-<table>
-  <tr><td>Name</td><td></td><td>Phone</td><td></td><td>Email</td><td></td></tr>
-  <tr><td>Fax</td><td></td><td>Mobile</td><td></td><td>Designation</td><td></td></tr>
+</ng-container>
+<h1 >Key Contacts</h1>
+<table border="1">
+  <tr><th>Name</th><th>Phone</th><th>Email</th><th>Fax</th><th>Mobile</th><th>Designation</th></tr>
+  <tr *ngFor="let uk of keydata"><td>{{uk.CONTACT_NAME}}</td><td>{{uk.CONTACT_PHONE}}</td><td>{{uk.CONTACT_EMAIL}}</td>
+    <td>{{uk.CONTACT_FAX}}</td><td>{{uk.CONTACT_MOBILE}}</td><td>{{uk.CONTACT_DESIGNATION}}</td></tr>
 </table>
 </div>

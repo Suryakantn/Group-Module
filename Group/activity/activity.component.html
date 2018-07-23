@@ -1,0 +1,50 @@
+
+<html>
+<head>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+   
+    </style>
+    </head>
+    <body>
+  
+    <form class="example" style="margin:auto;max-width:300px" >
+      <input type="text" placeholder="Search.." name="search2" ng-model="user.search" >
+      <button type="submit"  (click)="onSearch()"  ><i class="fa fa-search"></i></button>
+    </form>
+    <div class="stable"  id="table1"  [hidden]="isLoaded"  >
+    <table border="1"  > 
+
+    <tr>
+      <th> GROUP_ID</th>
+      <th> GROUP_NAME  </th>
+      <th>  PARENT_GROUP  </th>
+       <th>DESCRIPTION</th>
+       <th>Actions</th>
+    </tr>
+     <tr *ngFor="let q of user | paginate: { itemsPerPage:5, currentPage: p } ">
+       <td>{{q.GROUP_ID}}</td> 
+       <td>{{q.GROUP_NAME}}</td> 
+       <td>{{q.PARENT_GROUP}}</td> 
+       <td>{{q.DESCRIPTION}}</td>
+       <td>
+      
+        <a [routerLink]="['/edit', q.GROUP_ID,q.GROUP_NAME,q.PARENT_GROUP,q.DESCRIPTION]"><input type="button" value="Edit"></a> 
+      </td>        
+       </tr>
+       
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <!-- <ul *ngFor="let q of collection | paginate: { itemsPerPage:2, currentPage: p }"  >    
+        <li>{{q}}</li>
+        </ul>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+  
+    </div>
+
+
+  
+    </body>
+    </html> 
+    

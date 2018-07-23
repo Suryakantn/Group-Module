@@ -5,7 +5,7 @@
     <tr><td><p>{{ug.GROUP_ID}}</p></td><td><p>{{ug.GROUP_NAME}}</p></td>
     <td><p>{{ug.PARENT_GROUP}}</p></td><td><p>{{ug.GROUP_LEVEL}}</p></td>
     <td><p>{{ug.FQN_NAME}}</p></td>
-    <td><a routerLink="/profiletabs/viewgroupdetails/{{ug.GROUP_ID}}" routerLinkActive="active-link" >
+    <td><a [routerLink]="['/profiletabs/viewgroupdetails',ug.GROUP_ID]" routerLinkActive="active-link" >
     <button>view</button>
     </a></td></tr>
   </ng-container>

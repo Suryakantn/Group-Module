@@ -1,19 +1,52 @@
-<div class="container">
-<div class="serinp">
-<input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-</div>
-<div >
- <button class="search">Search</button> 
-</div>
-</div>
-<table >
-  <tr><th><p>GroupId</p></th><th><p>Group Name</p></th><th><p>Parent Group</p></th><th><p>Group Level</p></th></tr>
-  <ng-container *ngFor="let ug of usergroup">
-    <tr><td><p>{{ug.GROUP_ID}}</p></td><td><P>{{ug.GROUP_NAME}}</P></td><td><p>{{ug.PARENT_GROUP}}</p></td><td><p>{{ug.GROUP_LEVEL}}</p></td></tr>
-  </ng-container>
-  <ul>
-    <li ng-repeat="ug in usergroup ">
 
-    </li>
-  </ul>
-</table>
+<html>
+    <head>
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+       
+        </style>
+        </head>
+        <body>
+      
+        <form class="example" style="margin:auto;max-width:300px" >
+          <input type="text" placeholder="Search.." name="search2" id="search2" >
+          <button type="submit"  (click)="onSearch()"  ><i class="fa fa-search"></i></button>
+        </form>
+        <div class="stable"  id="table1"  [hidden]="isLoaded"  >
+        <table border="1"  > 
+    
+        <tr>
+          <th> GROUP_ID</th>
+          <th> GROUP_NAME  </th>
+          <th>  PARENT_GROUP  </th>
+           <th>DESCRIPTION</th>
+           <th>Actions</th>
+        </tr>
+         <tr *ngFor="let q of userdata | paginate: { itemsPerPage:5, currentPage: p } ">
+           <td>{{q.GROUP_ID}}</td> 
+           <td>{{q.GROUP_NAME}}</td> 
+           <td>{{q.PARENT_GROUP}}</td> 
+           <td>{{q.DESCRIPTION}}</td>
+           <td> 
+            <a [routerLink]=""><input type="button" value="Edit"></a> 
+            <a [routerLink]="['/profiletabs/viewgroupdetails',q.GROUP_ID]"><input type="button" value="view"></a> 
+            <a routerLink="/profiletabs/subgroup"><input type="button" value="Subgroup"></a> 
+
+          </td>        
+           </tr>
+           
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <!-- <ul *ngFor="let q of collection | paginate: { itemsPerPage:2, currentPage: p }"  >    
+            <li>{{q}}</li>
+            </ul>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+      
+        </div>
+    
+    
+      
+        </body>
+        </html> 
+        
